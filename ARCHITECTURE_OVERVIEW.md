@@ -1,6 +1,6 @@
 # ARCHITECTURE OVERVIEW
 
-The __{LIBRARY_NAME}__ is a Spring Boot auto-configuration library structured around a clear separation between public API and private implementation.
+The __forgepack-validation__ is a Spring Boot auto-configuration library structured around a clear separation between public API and private implementation.
 
 ## 1. PACKAGE STRUCTURE
 

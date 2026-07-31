@@ -1,4 +1,4 @@
-# _{LIBRARY_NAME}_
+# _forgepack-validation_
 [![GitHub stars](https://img.shields.io/github/stars/forgepack/{ARTIFACT_ID}?style=social)](https://github.com/forgepack/{ARTIFACT_ID})
 [![GitHub forks](https://img.shields.io/github/forks/forgepack/{ARTIFACT_ID}?style=social)](https://github.com/forgepack/{ARTIFACT_ID}/fork)
 [![GitHub watchers](https://img.shields.io/github/watchers/forgepack/{ARTIFACT_ID}?style=social)](https://github.com/forgepack/{ARTIFACT_ID})
@@ -15,7 +15,7 @@
 
 ## Description
 
-_{LIBRARY_NAME}_ is a Spring Boot auto-configuration library that {DESCRIPTION}.
+_forgepack-validation_ is a Spring Boot auto-configuration library that {DESCRIPTION}.
 
 ## SUMMARY
 - [1. Installation](#1-installation)
