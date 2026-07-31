@@ -1,0 +1,52 @@
+package dev.forgepack.validation.api.annotation;
+
+import dev.forgepack.validation.internal.validator.ValidatorImpl;
+import dev.forgepack.validation.internal.validator.ValidatorHasLetterImpl;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Documented;
+
+/**
+ * Bean Validation constraint that verifies whether a string contains
+ * at least one letter.
+ *
+ * <p>This constraint validates that the annotated field includes at least
+ * one letter ({@code a-zA-Z}). The validation logic delegates the
+ * verification to {@link ValidatorImpl#hasLetter(String)}.</p>
+ *
+ * <p>This constraint can be applied to string fields that require the
+ * presence of alphabetic characters, such as passwords, identifiers,
+ * or formatted codes.</p>
+ *
+ * <h3>Validation rules</h3>
+ * <ul>
+ *     <li>The value must contain at least one letter</li>
+ *     <li>{@code null} values are considered valid</li>
+ * </ul>
+ *
+ * <h3>Example</h3>
+ * <pre>{@code
+ * @HasLetter
+ * private String password;
+ * }</pre>
+ *
+ * @author Marcelo Ribeiro Gadelha
+ * @since 1.0
+ *
+ * @see ValidatorImpl#hasLetter(String)
+ * @see Constraint
+ */
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = { ValidatorHasLetterImpl.class })
+@Documented
+public @interface HasLetter {
+
+    String message() default "{has.letter}";
+    Class<?>[] groups() default { };
+    Class<? extends Payload>[] payload() default { };
+}
