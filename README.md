@@ -73,8 +73,8 @@ The library registers its auto-configuration through:
 META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
 ```
 
-All public API classes are available under `dev.forgepack.{PACKAGE_NAME}.api`.  
-Internal implementation details are encapsulated in `dev.forgepack.{PACKAGE_NAME}.internal`.
+All public API classes are available under `dev.forgepack.forgepack-validation.api`.  
+Internal implementation details are encapsulated in `dev.forgepack.forgepack-validation.internal`.
 
 ## 4. QUALITY & TESTING
 
@@ -85,8 +85,8 @@ TOTAL NUMBER OF TESTS: 0
 
 | Package                                              | Coverage |        |
 |:-----------------------------------------------------|:--------:|:------:|
-| 📁 dev.forgepack.{PACKAGE_NAME}.api                  |    0%    |   🔴   |
-| 📁 dev.forgepack.{PACKAGE_NAME}.internal             |    0%    |   🔴   |
+| 📁 dev.forgepack.forgepack-validation.api                  |    0%    |   🔴   |
+| 📁 dev.forgepack.forgepack-validation.internal             |    0%    |   🔴   |
 
 ### 4.2. Types of Tests Implemented
 1. __Unit Tests__: Service and component layer

@@ -6,8 +6,8 @@ The __forgepack-validation__ is a Spring Boot auto-configuration library structu
 
 | Package        | Path                                          | Responsibility                                                                  |
 |:---------------|:----------------------------------------------|:--------------------------------------------------------------------------------|
-| __api__        | `dev.forgepack.{PACKAGE_NAME}.api`            | Public contracts: interfaces, annotations, `@ConfigurationProperties`, records. |
-| __internal__   | `dev.forgepack.{PACKAGE_NAME}.internal`       | Private implementation: beans, services, and auto-configuration classes.        |
+| __api__        | `dev.forgepack.forgepack-validation.api`            | Public contracts: interfaces, annotations, `@ConfigurationProperties`, records. |
+| __internal__   | `dev.forgepack.forgepack-validation.internal`       | Private implementation: beans, services, and auto-configuration classes.        |
 
 > **Rule:** Consumers should only reference types in `api`. The `internal` package is an implementation detail and may change between minor versions without notice.
 
