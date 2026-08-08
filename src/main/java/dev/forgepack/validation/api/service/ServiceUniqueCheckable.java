@@ -11,7 +11,7 @@ import java.util.UUID;
  * <p>This interface defines the operations required to verify whether a given
  * field value already exists in the persistence layer. It is primarily used by
  * the {@link ValidatorUnique} to
- * support the {@link dev.forgepack.validation.api.annotation.Unique} Bean Validation
+ * support the {@link Unique} Bean Validation
  * constraint.</p>
  *
  * <p>Implementations are typically provided by application services responsible
