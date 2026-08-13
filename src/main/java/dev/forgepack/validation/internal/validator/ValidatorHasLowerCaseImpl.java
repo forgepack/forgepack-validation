@@ -9,6 +9,7 @@ public class ValidatorHasLowerCaseImpl implements ValidatorHasLowerCase {
     private final Validator validator = ValidatorImpl.INSTANCE;
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
+        if (value == null) return true;
         return validator.hasLowerCase(value);
     }
 }

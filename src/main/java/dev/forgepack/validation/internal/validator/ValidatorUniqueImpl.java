@@ -5,11 +5,9 @@ import dev.forgepack.validation.api.service.ServiceUniqueCheckable;
 import dev.forgepack.validation.api.validator.ValidatorUnique;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 import java.lang.reflect.Field;
 import java.util.UUID;
 
-@Component
 public class ValidatorUniqueImpl implements ValidatorUnique {
 
     private String[] fields;
@@ -41,7 +39,7 @@ public class ValidatorUniqueImpl implements ValidatorUnique {
             if (trimmed.isBlank()) continue;
             boolean isUnique = (idValue == null || idValue.toString().isBlank())
                     ? !resolveService().existsByField(field, trimmed)
-                    : !resolveService().existsByFieldAndIdNot(field, trimmed, (UUID) idValue);
+                    : !resolveService().existsByFieldAndIdNot(field, trimmed, toUUID(idValue));
             if (!isUnique) {
                 context.disableDefaultConstraintViolation();
                 context.buildConstraintViolationWithTemplate(
@@ -68,6 +66,18 @@ public class ValidatorUniqueImpl implements ValidatorUnique {
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new IllegalArgumentException(
                     "Field '" + fieldName + "' not found in " + target.getClass().getSimpleName()
+            );
+        }
+    }
+
+    private UUID toUUID(Object value) {
+        if (value instanceof UUID uuid) return uuid;
+        try {
+            return UUID.fromString(value.toString());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(
+                    "The idField value '" + value + "' cannot be converted to UUID. " +
+                    "@Unique only supports UUID identifiers.", e
             );
         }
     }

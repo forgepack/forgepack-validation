@@ -40,7 +40,7 @@ import java.lang.annotation.Documented;
  * @see ValidatorImpl#hasLetter(String)
  * @see Constraint
  */
-@Target(ElementType.FIELD)
+@Target({ ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { ValidatorHasLetterImpl.class })
 @Documented

@@ -40,7 +40,7 @@ import java.lang.annotation.Documented;
  * @see ValidatorImpl#hasLowerCase(String)
  * @see Constraint
  */
-@Target(ElementType.FIELD)
+@Target({ ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { ValidatorHasLowerCaseImpl.class })
 @Documented

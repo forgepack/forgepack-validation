@@ -24,7 +24,7 @@ import java.lang.annotation.Documented;
  *
  * <h3>Validation rules</h3>
  * <ul>
- *     <li>The value must has the minimum required length</li>
+ *     <li>The value must meet the minimum required length (default: 8)</li>
  *     <li>{@code null} values are considered valid</li>
  * </ul>
  *
@@ -40,7 +40,7 @@ import java.lang.annotation.Documented;
  * @see ValidatorImpl#hasLength(int, String)
  * @see Constraint
  */
-@Target(ElementType.FIELD)
+@Target({ ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { ValidatorHasLengthImpl.class })
 @Documented
@@ -49,4 +49,5 @@ public @interface HasLength {
     String message() default "{has.length}";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
+    int min() default 8;
 }

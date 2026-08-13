@@ -33,14 +33,14 @@ import java.lang.annotation.RetentionPolicy;
  *
  * <p><b>Example:</b></p>
  * <pre>{@code
- * @Unique(service = RoleService.class, field = "name")
+ * @Unique(service = RoleService.class, fields = "name")
  * public class DTORequestRole {
  *     private String name;
  * }
  * }</pre>
  *
  * <pre>{@code
- * @Unique(service = RoleService.class, field = "name", idField = "id")
+ * @Unique(service = RoleService.class, fields = "name", idField = "id")
  * public class DTORequestRole {
  *     private UUID id;
  *     private String name;
