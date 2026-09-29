@@ -6,7 +6,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/forgepack/forgepack-validation)
 ![Maven Central](https://img.shields.io/maven-central/v/dev.forgepack/forgepack-validation)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![Test Coverage](https://img.shields.io/badge/coverage-0%25-red)
+![Test Coverage](https://img.shields.io/badge/coverage-95.83%25-brightgreen)
 
 ## Tech Stack
 ![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk)
@@ -80,13 +80,16 @@ Internal implementation details are encapsulated in `dev.forgepack.forgepack-val
 
 ### 4.1. Current Coverage Metrics
 
-GENERAL COVERAGE: 0%
-TOTAL NUMBER OF TESTS: 0
+GENERAL COVERAGE: 95.83% (line coverage)
+TOTAL NUMBER OF TESTS: 76
+MINIMUM REQUIRED COVERAGE: 80% (JaCoCo line coverage)
 
 | Package                                              | Coverage |        |
 |:-----------------------------------------------------|:--------:|:------:|
-| 📁 dev.forgepack.forgepack-validation.api                  |    0%    |   🔴   |
-| 📁 dev.forgepack.forgepack-validation.internal             |    0%    |   🔴   |
+| 📁 dev.forgepack.forgepack-validation.api                  |    N/A   |   ⚪   |
+| 📁 dev.forgepack.forgepack-validation.internal             |  95.83%  |   🟢   |
+
+Coverage measured with `./mvnw.cmd clean test jacoco:report` on 2026-09-29. JaCoCo also reports 96.30% branch, 95.00% instruction, and 100% method and class coverage for instrumented production classes.
 
 ### 4.2. Types of Tests Implemented
 1. __Unit Tests__: Service and component layer
