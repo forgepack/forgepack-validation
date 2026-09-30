@@ -1,12 +1,12 @@
+<div align="center">
+
 # _forgepack-validation_
+
 [![GitHub stars](https://img.shields.io/github/stars/forgepack/forgepack-validation?style=social)](https://github.com/forgepack/forgepack-validation)
 [![GitHub forks](https://img.shields.io/github/forks/forgepack/forgepack-validation?style=social)](https://github.com/forgepack/forgepack-validation/fork)
 [![GitHub watchers](https://img.shields.io/github/watchers/forgepack/forgepack-validation?style=social)](https://github.com/forgepack/forgepack-validation)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/forgepack/forgepack-validation)
-![Maven Central](https://img.shields.io/maven-central/v/dev.forgepack/forgepack-validation)
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![Test Coverage](https://img.shields.io/badge/coverage-95.83%25-brightgreen)
+</div>
 
 ## Tech Stack
 ![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk)
@@ -14,6 +14,10 @@
 ![Maven](https://img.shields.io/badge/Maven-3.8+-blue?logo=apachemaven)
 
 ## Description
+![GitHub last commit](https://img.shields.io/github/last-commit/forgepack/forgepack-validation)
+![Maven Central](https://img.shields.io/maven-central/v/dev.forgepack/forgepack-validation)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Test Coverage](https://img.shields.io/badge/coverage-95.83%25-brightgreen)
 
 _forgepack-validation_ is a Spring Boot auto-configuration library that {DESCRIPTION}.
 
