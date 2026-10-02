@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>dev.forgepack</groupId>
 	<artifactId>forgepack-validation</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 	<name>Forgepack Validation Library</name>
 	<description>Portable set of custom Bean Validation constraints, without dependencies on Spring Security or JPA</description>
 	<url>https://github.com/orgs/forgepack/forgepack-validation</url>
