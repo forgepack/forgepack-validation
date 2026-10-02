@@ -19,7 +19,7 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Test Coverage](https://img.shields.io/badge/coverage-95.83%25-brightgreen)
 
-_forgepack-validation_ is a Spring Boot auto-configuration library that {DESCRIPTION}.
+_forgepack-validation_ is a Spring Boot auto-configuration library that is a portable set of custom Bean Validation constraints, without dependencies on Spring Security or JPA.
 
 ## SUMMARY
 - [1. Installation](#1-installation)
@@ -65,8 +65,8 @@ public class MyApplication {
 
 ```properties
 # application.properties
-forgepack.{artifact-id}.enabled=true
-forgepack.{artifact-id}.property-name=value
+forgepack.validation.enabled=true
+forgepack.validation.property-name=value
 ```
 
 ## 3. AUTO-CONFIGURATION
@@ -88,10 +88,10 @@ GENERAL COVERAGE: 95.83% (line coverage)
 TOTAL NUMBER OF TESTS: 76
 MINIMUM REQUIRED COVERAGE: 80% (JaCoCo line coverage)
 
-| Package                                              | Coverage |        |
-|:-----------------------------------------------------|:--------:|:------:|
-| 📁 dev.forgepack.forgepack-validation.api                  |    N/A   |   ⚪   |
-| 📁 dev.forgepack.forgepack-validation.internal             |  95.83%  |   🟢   |
+| Package                                               | Coverage |         |
+|:------------------------------------------------------|:--------:|:-------:|
+| 📁 dev.forgepack.forgepack-validation.api             |    N/A   |   ⚪   |
+| 📁 dev.forgepack.forgepack-validation.internal        |  95.83%  |   🟢   |
 
 Coverage measured with `./mvnw.cmd clean test jacoco:report` on 2026-09-29. JaCoCo also reports 96.30% branch, 95.00% instruction, and 100% method and class coverage for instrumented production classes.
 
@@ -140,8 +140,8 @@ mvn clean test jacoco:report
 # ╔══════════════════════════════════════════════╗
 # ║         LIBRARY CONFIGURATION                ║
 # ╚══════════════════════════════════════════════╝
-forgepack.{artifact-id}.enabled=true
-forgepack.{artifact-id}.property-name=default-value
+forgepack.validation.enabled=true
+forgepack.validation.property-name=default-value
 ```
 
 ## DEVELOPERS

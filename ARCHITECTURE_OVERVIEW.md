@@ -38,7 +38,7 @@ The main auto-configuration class is registered there and is discovered automati
 ### 3.2. Configuration Properties
 All configurable values are bound through a strongly-typed properties class prefixed with:
 ```properties
-forgepack.{artifact-id}.*
+forgepack.validation.*
 ```
 
 ### 3.3. `@ConditionalOnMissingBean`
