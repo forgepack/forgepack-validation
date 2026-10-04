@@ -1,8 +1,8 @@
 package dev.forgepack.validation.api.annotation;
 
-import dev.forgepack.validation.api.service.ServiceUniqueCheckable;
-import dev.forgepack.validation.api.validator.ValidatorUnique;
-import dev.forgepack.validation.internal.validator.ValidatorUniqueImpl;
+import dev.forgepack.validation.api.service.UniqueCheckableService;
+import dev.forgepack.validation.api.validator.UniqueValidator;
+import dev.forgepack.validation.internal.validator.UniqueValidatorImpl;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.Target;
@@ -17,7 +17,7 @@ import java.lang.annotation.RetentionPolicy;
  * <p>This annotation can be applied to a class to ensure that the value of a
  * specified field is unique within the persistence layer. The validation
  * process delegates the uniqueness check to a service that implements
- * {@link ServiceUniqueCheckable}.</p>
+ * {@link UniqueCheckableService}.</p>
  *
  * <p>This constraint supports both creation and update scenarios. During update
  * operations, the current entity identifier can be excluded from the check
@@ -50,13 +50,13 @@ import java.lang.annotation.RetentionPolicy;
  * @author Marcelo Ribeiro Gadelha
  * @since 1.0
  *
- * @see ValidatorUnique
- * @see ServiceUniqueCheckable
+ * @see UniqueValidator
+ * @see UniqueCheckableService
  * @see Constraint
  */
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = { ValidatorUniqueImpl.class })
+@Constraint(validatedBy = { UniqueValidatorImpl.class })
 @Documented
 public @interface Unique {
 
@@ -65,5 +65,5 @@ public @interface Unique {
     Class<? extends Payload>[] payload() default { };
     String[] fields() default {"name"};
     String idField() default "id";
-    Class<? extends ServiceUniqueCheckable> service();
+    Class<? extends UniqueCheckableService> service();
 }

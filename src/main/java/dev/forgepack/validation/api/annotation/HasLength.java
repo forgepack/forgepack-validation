@@ -1,7 +1,7 @@
 package dev.forgepack.validation.api.annotation;
 
-import dev.forgepack.validation.internal.validator.ValidatorImpl;
-import dev.forgepack.validation.internal.validator.ValidatorHasLengthImpl;
+import dev.forgepack.validation.internal.validator.ValidatorRulesImpl;
+import dev.forgepack.validation.internal.validator.HasLengthValidatorImpl;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.Target;
@@ -16,7 +16,7 @@ import java.lang.annotation.Documented;
  *
  * <p>This constraint validates that the annotated field includes the minimum required length.
  * The validation logic delegates the
- * verification to {@link ValidatorImpl#hasLength(int, String)}.</p>
+ * verification to {@link ValidatorRulesImpl#hasLength(int, String)}.</p>
  *
  * <p>This constraint can be applied to string fields that require a
  * minimum number of characters, such as passwords, identifiers,
@@ -37,12 +37,12 @@ import java.lang.annotation.Documented;
  * @author Marcelo Ribeiro Gadelha
  * @since 1.0
  *
- * @see ValidatorImpl#hasLength(int, String)
+ * @see ValidatorRulesImpl#hasLength(int, String)
  * @see Constraint
  */
 @Target({ ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = { ValidatorHasLengthImpl.class })
+@Constraint(validatedBy = { HasLengthValidatorImpl.class })
 @Documented
 public @interface HasLength {
 

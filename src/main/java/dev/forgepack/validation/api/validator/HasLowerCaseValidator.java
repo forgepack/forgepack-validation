@@ -1,31 +1,31 @@
 package dev.forgepack.validation.api.validator;
 
-import dev.forgepack.validation.api.annotation.HasUpperCase;
+import dev.forgepack.validation.api.annotation.HasLowerCase;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
 /**
- * Contract for validators that enforce the {@link HasUpperCase} constraint.
+ * Contract for validators that enforce the {@link HasLowerCase} constraint.
  *
  * <p>Implementations are responsible for verifying whether a string contains
- * at least one uppercase letter ({@code A-Z}).</p>
+ * at least one lowercase letter ({@code a-z}).</p>
  *
  * <p>Null values are considered valid and must not trigger a constraint violation.</p>
  *
  * @author Marcelo Ribeiro Gadelha
  * @since 1.0
  *
- * @see HasUpperCase
+ * @see HasLowerCase
  * @see ConstraintValidator
  */
-public interface ValidatorHasUpperCase extends ConstraintValidator<HasUpperCase, String> {
+public interface HasLowerCaseValidator extends ConstraintValidator<HasLowerCase, String> {
 
     /**
-     * Validates whether the provided string contains at least one uppercase letter.
+     * Validates whether the provided string contains at least one lowercase letter.
      *
      * @param value string to be validated
      * @param context validation context
-     * @return {@code true} if the string contains at least one uppercase letter or is {@code null};
+     * @return {@code true} if the string contains at least one lowercase letter or is {@code null};
      *         {@code false} otherwise
      */
     boolean isValid(String value, ConstraintValidatorContext context);

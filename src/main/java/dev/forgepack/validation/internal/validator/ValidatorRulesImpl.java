@@ -1,12 +1,12 @@
 package dev.forgepack.validation.internal.validator;
 
-import dev.forgepack.validation.api.validator.Validator;
+import dev.forgepack.validation.api.validator.ValidatorRules;
 
-public final class ValidatorImpl implements Validator {
+public final class ValidatorRulesImpl implements ValidatorRules {
 
-    public static final Validator INSTANCE = new ValidatorImpl();
+    public static final ValidatorRules INSTANCE = new ValidatorRulesImpl();
 
-    private ValidatorImpl() {}
+    private ValidatorRulesImpl() {}
 
     public boolean isNull(Object value) {
         return value == null;

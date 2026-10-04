@@ -1,12 +1,12 @@
 package dev.forgepack.validation.internal.validator;
 
-import dev.forgepack.validation.api.validator.Validator;
-import dev.forgepack.validation.api.validator.ValidatorHasLetter;
+import dev.forgepack.validation.api.validator.ValidatorRules;
+import dev.forgepack.validation.api.validator.HasLetterValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class ValidatorHasLetterImpl implements ValidatorHasLetter {
+public class HasLetterValidatorImpl implements HasLetterValidator {
 
-    private final Validator validator = ValidatorImpl.INSTANCE;
+    private final ValidatorRules validator = ValidatorRulesImpl.INSTANCE;
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         if (value == null) return true;

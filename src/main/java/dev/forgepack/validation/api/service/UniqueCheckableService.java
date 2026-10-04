@@ -1,7 +1,7 @@
 package dev.forgepack.validation.api.service;
 
 import dev.forgepack.validation.api.annotation.Unique;
-import dev.forgepack.validation.api.validator.ValidatorUnique;
+import dev.forgepack.validation.api.validator.UniqueValidator;
 
 import java.util.UUID;
 
@@ -10,7 +10,7 @@ import java.util.UUID;
  *
  * <p>This interface defines the operations required to verify whether a given
  * field value already exists in the persistence layer. It is primarily used by
- * the {@link ValidatorUnique} to
+ * the {@link UniqueValidator} to
  * support the {@link Unique} Bean Validation
  * constraint.</p>
  *
@@ -28,9 +28,9 @@ import java.util.UUID;
  * @since 1.0
  *
  * @see Unique
- * @see ValidatorUnique
+ * @see UniqueValidator
  */
-public interface ServiceUniqueCheckable {
+public interface UniqueCheckableService {
 
     /**
      * Checks whether a record exists with the specified value in the given field.

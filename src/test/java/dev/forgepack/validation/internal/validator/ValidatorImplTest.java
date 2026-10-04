@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class ValidatorImplTest {
+class ValidatorRulesImplTest {
 
-    private final ValidatorImpl sut = (ValidatorImpl) ValidatorImpl.INSTANCE;
+    private final ValidatorRulesImpl sut = (ValidatorRulesImpl) ValidatorRulesImpl.INSTANCE;
 
     // ─── isNull ───────────────────────────────────────────────────────────────
 

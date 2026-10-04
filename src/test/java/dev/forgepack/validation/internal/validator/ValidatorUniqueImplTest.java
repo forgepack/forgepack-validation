@@ -1,7 +1,7 @@
 package dev.forgepack.validation.internal.validator;
 
 import dev.forgepack.validation.api.annotation.Unique;
-import dev.forgepack.validation.api.service.ServiceUniqueCheckable;
+import dev.forgepack.validation.api.service.UniqueCheckableService;
 import jakarta.validation.ConstraintValidatorContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,13 +22,13 @@ import static org.mockito.Mockito.*;
 class ValidatorUniqueImplTest {
 
     @Mock ApplicationContext applicationContext;
-    @Mock ServiceUniqueCheckable service;
+    @Mock UniqueCheckableService service;
     @Mock ConstraintValidatorContext constraintContext;
     @Mock ConstraintValidatorContext.ConstraintViolationBuilder violationBuilder;
     @Mock ConstraintValidatorContext.ConstraintViolationBuilder.NodeBuilderCustomizableContext nodeBuilder;
     @Mock Unique annotation;
 
-    private ValidatorUniqueImpl sut;
+    private UniqueValidatorImpl sut;
 
     static class NameDto {
         UUID id; // null = create scenario
@@ -51,10 +51,10 @@ class ValidatorUniqueImplTest {
     @SuppressWarnings("unchecked")
     @BeforeEach
     void setUp() {
-        sut = new ValidatorUniqueImpl(applicationContext);
+        sut = new UniqueValidatorImpl(applicationContext);
         when(annotation.fields()).thenReturn(new String[]{"name"});
         when(annotation.idField()).thenReturn("id");
-        when(annotation.service()).thenReturn((Class) ServiceUniqueCheckable.class);
+        when(annotation.service()).thenReturn((Class) UniqueCheckableService.class);
         when(applicationContext.getBean(any(Class.class))).thenReturn(service);
         sut.initialize(annotation);
     }

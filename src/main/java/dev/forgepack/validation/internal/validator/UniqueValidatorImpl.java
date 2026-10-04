@@ -1,22 +1,22 @@
 package dev.forgepack.validation.internal.validator;
 
 import dev.forgepack.validation.api.annotation.Unique;
-import dev.forgepack.validation.api.service.ServiceUniqueCheckable;
-import dev.forgepack.validation.api.validator.ValidatorUnique;
+import dev.forgepack.validation.api.service.UniqueCheckableService;
+import dev.forgepack.validation.api.validator.UniqueValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.context.ApplicationContext;
 import java.lang.reflect.Field;
 import java.util.UUID;
 
-public class ValidatorUniqueImpl implements ValidatorUnique {
+public class UniqueValidatorImpl implements UniqueValidator {
 
     private String[] fields;
     private String idField;
-    private Class<? extends ServiceUniqueCheckable> serviceClass;
-    private ServiceUniqueCheckable service;
+    private Class<? extends UniqueCheckableService> serviceClass;
+    private UniqueCheckableService service;
     private final ApplicationContext context;
 
-    public ValidatorUniqueImpl(ApplicationContext context) {
+    public UniqueValidatorImpl(ApplicationContext context) {
         this.context = context;
     }
 
@@ -52,7 +52,7 @@ public class ValidatorUniqueImpl implements ValidatorUnique {
         }
         return allUnique;
     }
-    private ServiceUniqueCheckable resolveService() {
+    private UniqueCheckableService resolveService() {
         if (service == null) {
             service = context.getBean(serviceClass);
         }

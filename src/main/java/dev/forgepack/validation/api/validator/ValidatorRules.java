@@ -25,7 +25,7 @@ package dev.forgepack.validation.api.validator;
  * @author Marcelo Ribeiro Gadelha
  * @since 1.0
  */
-public interface Validator {
+public interface ValidatorRules {
 
     /**
      * Checks whether the provided value is {@code null}.

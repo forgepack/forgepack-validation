@@ -1,7 +1,7 @@
 package dev.forgepack.validation.api.annotation;
 
-import dev.forgepack.validation.internal.validator.ValidatorImpl;
-import dev.forgepack.validation.internal.validator.ValidatorHasLowerCaseImpl;
+import dev.forgepack.validation.internal.validator.ValidatorRulesImpl;
+import dev.forgepack.validation.internal.validator.HasLowerCaseValidatorImpl;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.Target;
@@ -16,7 +16,7 @@ import java.lang.annotation.Documented;
  *
  * <p>This constraint validates that the annotated field includes at least
  * one lowercase letter ({@code a-z}). The validation logic delegates the
- * verification to {@link ValidatorImpl#hasLowerCase(String)}.</p>
+ * verification to {@link ValidatorRulesImpl#hasLowerCase(String)}.</p>
  *
  * <p>This constraint can be applied to string fields that require the
  * presence of lowercase letters, such as passwords, identifiers,
@@ -37,12 +37,12 @@ import java.lang.annotation.Documented;
  * @author Marcelo Ribeiro Gadelha
  * @since 1.0
  *
- * @see ValidatorImpl#hasLowerCase(String)
+ * @see ValidatorRulesImpl#hasLowerCase(String)
  * @see Constraint
  */
 @Target({ ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = { ValidatorHasLowerCaseImpl.class })
+@Constraint(validatedBy = { HasLowerCaseValidatorImpl.class })
 @Documented
 public @interface HasLowerCase {
 

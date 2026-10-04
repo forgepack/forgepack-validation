@@ -1,12 +1,12 @@
 package dev.forgepack.validation.internal.validator;
 
-import dev.forgepack.validation.api.validator.Validator;
-import dev.forgepack.validation.api.validator.ValidatorHasLowerCase;
+import dev.forgepack.validation.api.validator.ValidatorRules;
+import dev.forgepack.validation.api.validator.HasLowerCaseValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class ValidatorHasLowerCaseImpl implements ValidatorHasLowerCase {
+public class HasLowerCaseValidatorImpl implements HasLowerCaseValidator {
 
-    private final Validator validator = ValidatorImpl.INSTANCE;
+    private final ValidatorRules validator = ValidatorRulesImpl.INSTANCE;
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         if (value == null) return true;

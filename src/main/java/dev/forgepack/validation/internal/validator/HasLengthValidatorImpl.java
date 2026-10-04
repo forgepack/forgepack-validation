@@ -1,14 +1,14 @@
 package dev.forgepack.validation.internal.validator;
 
 import dev.forgepack.validation.api.annotation.HasLength;
-import dev.forgepack.validation.api.validator.Validator;
-import dev.forgepack.validation.api.validator.ValidatorHasLength;
+import dev.forgepack.validation.api.validator.ValidatorRules;
+import dev.forgepack.validation.api.validator.HasLengthValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class ValidatorHasLengthImpl implements ValidatorHasLength {
+public class HasLengthValidatorImpl implements HasLengthValidator {
 
     private int min = 8;
-    private final Validator validator = ValidatorImpl.INSTANCE;
+    private final ValidatorRules validator = ValidatorRulesImpl.INSTANCE;
 
     @Override
     public void initialize(HasLength annotation) {
